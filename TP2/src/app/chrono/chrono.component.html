@@ -1,0 +1,9 @@
+<div>
+  <span class="times">{{mins | decToStr}}:{{secs | decToStr}},{{centsecs | decToStr}}</span>
+  <button [ngClass]="{started: isStarted, stopped: !isStarted}" mat-raised-button (click)="toggle()">
+    {{!isStarted ? 'start' : 'stop'}}
+  </button>
+  <button mat-raised-button (click)="reset()">
+    reset
+  </button>
+</div>

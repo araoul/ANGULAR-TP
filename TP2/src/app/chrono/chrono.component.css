@@ -1,0 +1,42 @@
+:host {
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  background: #222;
+  padding: 30px;
+  border-radius: 100%;
+  z-index: 0;
+}
+:host>div {
+  z-index: 3;
+}
+:host:before {
+  content: ' ';
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  border: 5px solid #414141;
+  border-radius: 100%;
+  top: -8px;
+  left: -8px;
+  padding: 30px;
+  z-index: 0;
+}
+:host .times {
+  display: block;
+  font-size:50px;
+  color:white;
+  margin-bottom: 50px;
+  padding-top: 30px;
+}
+
+button.started {
+  background-color:red;
+}
+
+button.stopped {
+  background-color:lightgreen;
+}
