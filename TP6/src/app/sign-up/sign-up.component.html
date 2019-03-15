@@ -1,0 +1,76 @@
+<mat-card>
+  <mat-card-content>
+    <h1>Signup</h1>
+    <form (ngSubmit)="signupForm.valid && signup(signupForm.value)" #signupForm="ngForm">
+      <mat-input-container>
+        <input matInput
+               type="text"
+               placeholder="Prénom"
+               name="firstName"
+               [(ngModel)]="user.firstName"
+               #firstName="ngModel"
+               required />
+        <mat-error *ngIf="firstName.hasError('required')">
+          Veuillez saisir un prénom.
+        </mat-error>
+      </mat-input-container>
+      <br/>
+      <mat-input-container>
+        <input matInput
+               type="text"
+               placeholder="Nom"
+               name="lastName"
+               [(ngModel)]="user.lastName"
+               #lastName="ngModel"
+               required />
+        <mat-error *ngIf="lastName.hasError('required')" >
+          Veuillez saisir le nom.
+        </mat-error>
+      </mat-input-container>
+      <br/>
+      <mat-input-container>
+        <input matInput
+               placeholder="E-mail"
+               type="email"
+               name="email"
+               [(ngModel)]="user.email"
+               #email="ngModel"
+               email
+               required />
+
+        <mat-error *ngIf="email.hasError('required')">
+          Veuillez saisir un e-mail.
+        </mat-error>
+
+        <mat-error *ngIf="!email.hasError('required') && email.hasError('email')">
+          Veuillez saisir un e-mail valide.
+        </mat-error>
+      </mat-input-container>
+      <br/>
+      <mat-input-container class="">
+
+        <input matInput
+               placeholder="Mot de passe"
+               type="password"
+               name="password"
+               [(ngModel)]="user.password"
+               #password="ngModel"
+               required />
+
+        <mat-error *ngIf="password.hasError('required')">
+          Veuillez saisir un mot de passe.
+        </mat-error>
+
+      </mat-input-container>
+
+      <mat-error *ngIf="error">
+        {{error}}
+      </mat-error>
+
+      <br />
+      <br />
+
+      <button mat-raised-button type="submit" [disabled]="signupForm.invalid">M'enregistrer</button>
+    </form>
+  </mat-card-content>
+</mat-card>
