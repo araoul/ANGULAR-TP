@@ -1,0 +1,5 @@
+<nav>
+  <a mat-button routerLink="/" class="site-title">{{title}}</a>
+  <a mat-button routerLink="/">Home</a>
+  <a mat-button (click)="changeRoute()">Sign {{ isConnected ? 'out' : 'in' }}</a>
+</nav>
