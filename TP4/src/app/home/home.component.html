@@ -1,0 +1,12 @@
+<div>
+  <div *ngIf="isConnected">
+    <h1>Bonjour {{currentUser?.firstName}} {{currentUser?.lastName}}!</h1>
+    <app-user-table [users]="users" (clickUser)="onClickUser($event)">
+    </app-user-table>
+  </div>
+  <div *ngIf="!isConnected">
+    <h1>Bienvenue</h1>
+    <p>Veuillez vous connecter avant de continuer.</p>
+    <a mat-raised-button routerLink="/login">Me connecter</a>
+  </div>
+</div>

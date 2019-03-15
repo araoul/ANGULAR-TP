@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <div>
+      <mat-checkbox (click)="toggleStatus()">
+        {{label}}
+      </mat-checkbox>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let user of users | usersOnline : hideOffline;">
+
+        <td class="{{user.id}}">{{user.id}}</td>
+        <td class="{{user.email}}">{{user.email}}</td>
+        <td class="{{user.status}}">{{user.status}}</td>
+        <td>
+          <button mat-mini-fab (click)="onClickUser(user)">
+            <mat-icon>search</mat-icon>
+          </button>
+        </td>
+      </tr>
+
+
+      </tbody>
+
+    </table>
+
+  </mat-card-content>
+</mat-card>
